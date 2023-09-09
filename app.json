@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "amigo-secreto-2",
+    "name": "Amigo Secreto 2",
     "slug": "amigo-secreto-2",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
