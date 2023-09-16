@@ -9,8 +9,16 @@ export default function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Google" component={OAuthSignIn} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Home Screen" }}
+        />
+        <Stack.Screen
+          name="Google"
+          component={OAuthSignIn}
+          options={{ title: "OAuth Login" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
