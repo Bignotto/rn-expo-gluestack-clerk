@@ -1,8 +1,14 @@
 import { Inter_900Black, useFonts } from "@expo-google-fonts/inter";
-import { Box, GluestackUIProvider } from "@gluestack-ui/themed";
-import { Text } from "react-native";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "@screens/Home";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const CLERK_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
   let [fontsLoaded, fontError] = useFonts({
     Inter_900Black,
   });
@@ -12,16 +18,12 @@ export default function App() {
   }
 
   return (
-    <GluestackUIProvider>
-      <Box
-        width="100%"
-        height="100%"
-        justifyContent="center"
-        alignItems="center"
-        backgroundColor="$green300"
-      >
-        <Text>This is version 0</Text>
-      </Box>
-    </GluestackUIProvider>
+    <NavigationContainer>
+      <GluestackUIProvider>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </GluestackUIProvider>
+    </NavigationContainer>
   );
 }
