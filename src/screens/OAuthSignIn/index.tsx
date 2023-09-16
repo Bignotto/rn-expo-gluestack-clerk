@@ -27,7 +27,13 @@ export default function OAuthSignIn() {
   }, []);
 
   return (
-    <Box>
+    <Box
+      width="100%"
+      height="100%"
+      justifyContent="center"
+      alignItems="center"
+      backgroundColor="$trueGray300"
+    >
       <Button onPress={handleGoogle}>
         <Text color="$white" fontWeight="$bold">
           Log in with google
