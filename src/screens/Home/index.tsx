@@ -1,4 +1,4 @@
-import { useAuth, useUser } from "@clerk/clerk-expo";
+import { SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-expo";
 import { Box, Button, Divider, Text } from "@gluestack-ui/themed";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -23,14 +23,18 @@ export default function Home() {
       <Text>User id is {`${sessionId}`}</Text>
 
       <Divider my="$0.5" />
-      <Button onPress={() => navigation.navigate("Google")}>
-        <Text>Google</Text>
-      </Button>
-      <Button onPress={() => signOut()}>
-        <Text color="$white" fontWeight="$bold">
-          LOG OUT
-        </Text>
-      </Button>
+      <SignedOut>
+        <Button onPress={() => navigation.navigate("Google")}>
+          <Text>Google</Text>
+        </Button>
+      </SignedOut>
+      <SignedIn>
+        <Button onPress={() => signOut()}>
+          <Text color="$white" fontWeight="$bold">
+            LOG OUT
+          </Text>
+        </Button>
+      </SignedIn>
     </Box>
   );
 }
