@@ -2,6 +2,7 @@
   "expo": {
     "name": "Amigo Secreto 2",
     "slug": "amigo-secreto-2",
+    "scheme": "amigo-secreto-2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
