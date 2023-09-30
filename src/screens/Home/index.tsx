@@ -1,5 +1,7 @@
 import { SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-expo";
-import { Box, Button, Divider, Heading, Text } from "@gluestack-ui/themed";
+import AppButton from "@components/AppButton";
+import AppScreenContainer from "@components/AppScreenContainer";
+import AppText from "@components/AppText";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StackParamList } from "@routes/Navigation.types";
@@ -11,32 +13,24 @@ export default function Home() {
   const navigation = useNavigation<NativeStackNavigationProp<StackParamList>>();
 
   return (
-    <Box
-      width="100%"
-      height="100%"
-      justifyContent="center"
-      alignItems="center"
-      backgroundColor="$trueGray300"
-    >
-      <Heading>This is template version 0</Heading>
-      <Text>User id is {`${user?.primaryEmailAddress}`}</Text>
-      <Text>User id is {`${sessionId}`}</Text>
+    <AppScreenContainer>
+      <AppText>
+        RN Expo StyledComponents with Stack Navigation and Clerk authentication
+      </AppText>
+      <AppText>Template version: 2</AppText>
 
-      <Divider bg="$white" my="$1.5" width="80%" />
-      <SignedOut>
-        <Button onPress={() => navigation.navigate("Google")} bgColor="$white">
-          <Text color="$trueGray700" fontWeight="$bold">
-            OAuth Login
-          </Text>
-        </Button>
-      </SignedOut>
       <SignedIn>
-        <Button onPress={() => signOut()} bgColor="$white">
-          <Text color="$trueGray700" fontWeight="$bold">
-            LOG OUT
-          </Text>
-        </Button>
+        <AppText>User logged in: {user?.fullName}</AppText>
+        <AppText>Session id is: {sessionId}</AppText>
+        <AppButton title="Log out" onPress={() => signOut()} />
       </SignedIn>
-    </Box>
+      <SignedOut>
+        <AppText>No user logged in</AppText>
+        <AppButton
+          title="Login"
+          onPress={() => navigation.navigate("OAuthSignIn")}
+        />
+      </SignedOut>
+    </AppScreenContainer>
   );
 }
