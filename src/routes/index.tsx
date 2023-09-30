@@ -15,7 +15,7 @@ export default function Routes() {
           options={{ title: "Home Screen" }}
         />
         <Stack.Screen
-          name="Google"
+          name="OAuthSignIn"
           component={OAuthSignIn}
           options={{ title: "OAuth Login" }}
         />

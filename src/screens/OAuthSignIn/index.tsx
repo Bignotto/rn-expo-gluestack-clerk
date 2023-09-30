@@ -1,5 +1,7 @@
 import { useOAuth } from "@clerk/clerk-expo";
-import { Box, Button, Text } from "@gluestack-ui/themed";
+import AppButton from "@components/AppButton";
+import AppScreenContainer from "@components/AppScreenContainer";
+import AppText from "@components/AppText";
 import { useWarmUpBrowser } from "@hooks/warmUpBrowser";
 import { useNavigation } from "@react-navigation/native";
 import { useCallback } from "react";
@@ -27,18 +29,9 @@ export default function OAuthSignIn() {
   }, []);
 
   return (
-    <Box
-      width="100%"
-      height="100%"
-      justifyContent="center"
-      alignItems="center"
-      backgroundColor="$trueGray300"
-    >
-      <Button onPress={handleGoogle}>
-        <Text color="$white" fontWeight="$bold">
-          Log in with google
-        </Text>
-      </Button>
-    </Box>
+    <AppScreenContainer>
+      <AppText>Login com google</AppText>
+      <AppButton title="Google login" onPress={handleGoogle} />
+    </AppScreenContainer>
   );
 }

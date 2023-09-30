@@ -13,9 +13,36 @@ Stack navigation is installed and configured.
 - Routes are defined in `/src/routes/index.tsx`
 - Type routes names in `Navigation.types.ts`
 
-## Gluestack
+## Styled Components
 
-Gluestack is installed and configured.
+Styled Components is installed and configured.
+Default theme is defined in file `/src/styles/DefaultTheme.ts`
+
+## App Components
+
+App Components are starter components to help building screens faster.
+
+### AppScreenContainer
+
+- Styled View to handle a screen basic configuration
+- padding and margins defined using `react-native-iphone-x-helper`
+
+### AppText
+
+- Styled text predefined sizes
+- font defined in theme file
+
+### AppButton
+
+- Styled button
+- predefined variations
+- colors from theme file
+
+### AppInput
+
+- Styled text input
+- can have a label
+- fonts defined in theme file
 
 ## Clerk authentication
 
