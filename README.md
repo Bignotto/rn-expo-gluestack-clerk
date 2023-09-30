@@ -1,4 +1,4 @@
-# React Native app with Expo, React Navigation, Clerk authentication and Gluestack components
+# React Native app with Expo, React Navigation, Clerk authentication and Styled Components
 
 This project was created using:
 
